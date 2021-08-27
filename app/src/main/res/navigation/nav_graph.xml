@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/reviewsFragment">
+
+    <fragment
+        android:id="@+id/reviewsFragment"
+        android:name="com.getyourguide.assignment.presentation.ui.main.reviews.ReviewsFragment"
+        android:label="Reviews"
+        tools:layout="@layout/fragment_reviews" >
+        <action
+            android:id="@+id/action_reviews_to_review_detail"
+            app:destination="@id/reviewDetailFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/reviewDetailFragment"
+        android:name="com.getyourguide.assignment.presentation.ui.main.reviews.ReviewDetailFragment"
+        android:label="Review detail"
+        tools:layout="@layout/fragment_review_detail" >
+        <argument
+            android:name="review"
+            app:argType="com.getyourguide.assignment.domain.model.Review" />
+    </fragment>
+</navigation>
