@@ -45,7 +45,7 @@ class ReviewsFragment : Fragment(R.layout.fragment_reviews), ReviewsAdapter.OnCl
     private fun subscribe() {
         binding.apply {
 
-            lifecycleScope.launch {
+            lifecycleScope.launchWhenResumed {
                 viewModel.reviews.collectLatest {
                     reviewsAdapter.submitData(it)
                 }
